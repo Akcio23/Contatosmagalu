@@ -1,72 +1,42 @@
-import ButtonAddContato from "./components/ButtonAddContato";
-import Contacts from "./components/Contacts";
-import Image from "next/image";
+'use client'
+import React from 'react'
+import Image from 'next/image'
+import Options from './components/Options'
+import Link from 'next/link'
+import { useEffect } from 'react';
 
-//Mocando dados de contatos
-const contacts = [{
-  email: "pedroacacio@gmail.com",
-  departament: "labs",
-  position:"Liberar Saldo",
-  number:"(16)99285-7699",
-  _id: "1"
-},
-{
-  email: "pedroacacio@gmail.com",
-  departament: "labs",
-  position:"Liberar Saldo",
-  number:"",
-  _id: "2"
-},
-{
-  email: "pedroacacio@gmail.com",
-  departament: "labs",
-  position:"Liberar Saldo",
-  number:"(16)99285-7699",
-  _id: "3"
-},{
-  email: "pedroacacio@gmail.com",
-  departament: "labs",
-  position:"Liberar Saldo",
-  number:"(16)99285-7699",
-  _id: "4"
-},
-{
-  email: "pedroacacio@gmail.com",
-  departament: "labs",
-  position:"Liberar Saldo",
-  number:"(16)99285-7699",
-  _id: "5"
-},
-{
-  email: "pedroacacio@gmail.com",
-  departament: "labs",
-  position:"Liberar Saldo",
-  number:"",
-  _id: "6"
-}]
 
-export default function Home() {
+
+const page = () => {
+  
+
+
+
   return (
     <div className="flex flex-col min-h-screen justify-center items-center bg-white">
-      <div className="fixed top-0 bg-blue-600 w-full text-center items-center p-7 rounded-b-2xl flex flex-col gap-3 mb-1">
+        <div className="fixed top-0 bg-blue-600 w-full text-center items-center p-7 rounded-b-2xl flex flex-col gap-3 mb-1">
+            <h1 className='text-white'>Magalu tools</h1>
+        </div>
 
-        <input
-          type="text"
-          className=" rounded-sm w-[98%] md:w-[50%] p-2 text-left "
-          placeholder="Como posso te ajudar?"
-        />
-        <ButtonAddContato />
+        <div className='flex flex-row'>
+              <Link href={"/contacts"}
+              className='no-underline text-inherit'> 
+              <Options img={"/pessoas.png"} title={"Contatos"} />
+              </Link>
+              
+             
 
-      </div>
+        </div>
 
-
-      <div className="w-[100%] mt-40 justify-items-center">
-        <Contacts contacts={contacts} />
-      </div>
-
-      
-
+        <Image
+        src={"/magalu-logo-0.png"}
+        alt="magalu"
+        width={120}
+        height={100}
+        className="fixed bottom-1"
+      />
     </div>
-
-  );
+  )
 }
+
+export default page
